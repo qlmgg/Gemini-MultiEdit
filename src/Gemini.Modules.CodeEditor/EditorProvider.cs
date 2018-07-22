@@ -41,7 +41,7 @@ namespace Gemini.Modules.CodeEditor
 	        return extension != null && _languageDefinitionManager.GetDefinitionByExtension(extension) != null;
 	    }
 
-	    public IDocument Create()
+	    public IDocument Create(string path)
         {
             return IoC.Get<CodeEditorViewModel>();
         }

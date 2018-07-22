@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +24,13 @@ namespace GodRustEditor.Modules.ArtEditor
       {
          InitializeComponent();
       }
-   }
+
+        private void Image_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            var st = (ScaleTransform)image.RenderTransform;
+            double zoom = e.Delta > 0 ? .2 : -.2;
+            st.ScaleX += zoom;
+            st.ScaleY += zoom;
+        }
+    }
 }

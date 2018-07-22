@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.IO;
 using System.Threading.Tasks;
@@ -29,7 +29,7 @@ namespace Gemini.Demo.Modules.TextEditor
 			return _extensions.Contains(extension);
 		}
 
-        public IDocument Create()
+        public IDocument Create(string path)
         {
             return new EditorViewModel();
         }

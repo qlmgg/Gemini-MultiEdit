@@ -61,6 +61,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -117,6 +118,7 @@
       <DependentUpon>ArtEditorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modules\ArtEditor\ArtEditorViewModel.cs" />
+    <Compile Include="Modules\ArtEditor\ZoomBorder.cs" />
     <Compile Include="Modules\SceneViewer\Commands\ViewSceneViewerCommandDefinition.cs" />
     <Compile Include="Modules\SceneViewer\Commands\ViewSceneViewerCommandHandler.cs" />
     <Compile Include="Modules\SceneViewer\MenuDefinitions.cs" />
@@ -132,6 +134,7 @@
     <Compile Include="Modules\TextEditor\Views\EditorView.xaml.cs">
       <DependentUpon>EditorView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MouseBehaviour.cs" />
     <Compile Include="Primitives\CubePrimitive.cs" />
     <Compile Include="Primitives\GeometricPrimitive.cs" />
     <Compile Include="Primitives\VertexPositionNormal.cs" />
@@ -195,6 +198,9 @@
       <Project>{13dbfc87-c152-4a86-94b0-d9944beef647}</Project>
       <Name>Gemini</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Modules\ArtEditor\transparency.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
