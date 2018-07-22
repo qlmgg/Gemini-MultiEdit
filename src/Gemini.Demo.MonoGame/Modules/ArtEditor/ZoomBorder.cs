@@ -38,7 +38,7 @@ namespace PanAndZoom
         public void Initialize(UIElement element)
         {
             this.child = element;
-            if (child != null)
+            if (child != null )//&& child.GetType() != typeof(Border))
             {
                 TransformGroup group = new TransformGroup();
                 ScaleTransform st = new ScaleTransform();
@@ -76,7 +76,7 @@ namespace PanAndZoom
 
         private void child_MouseWheel(object sender, MouseWheelEventArgs e)
         {
-            if (child != null)
+            if (child != null && ((FrameworkElement)child).Name !="transparencysquares")
             {
                 var st = GetScaleTransform(child);
                 var tt = GetTranslateTransform(child);

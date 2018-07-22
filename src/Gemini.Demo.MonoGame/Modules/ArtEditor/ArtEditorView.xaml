@@ -9,26 +9,29 @@
              xmlns:pz="clr-namespace:PanAndZoom"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <!--<Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+    <Grid >
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="transparency.png" TileMode="Tile" ViewportUnits="Absolute" Viewport="0,0,32,32"/>
+            </Grid.Background>
 
-        </Grid.RowDefinitions>-->
-        <pz:ZoomBorder ClipToBounds="True" Background="DarkSlateGray">
-            <Border>
-                <Border.Background>
-                    <ImageBrush ImageSource="transparency.png" TileMode="Tile" ViewportUnits="Absolute" Viewport="0,0,32,32" />
-                </Border.Background>
-                <Image Source="{Binding Content}" Name="image"
-                   cal:Message.Attach="[Event MouseUp] = [Action MouseUpCommand2($scaledmousex, $scaledmousey, $eventArgs)]"
-                   RenderTransformOrigin="0.5,0.5"
-                   />
-            </Border>
+        <pz:ZoomBorder Grid.Row="1" Grid.Column="1" ClipToBounds="True" BorderBrush="Black" BorderThickness="2">
+                <Grid Width="auto" Height="auto">
+                    <Border   BorderBrush="#FF3E3E3E" Margin="-8000" BorderThickness="8000" Width="auto" Height="auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Border BorderBrush="Black" BorderThickness="2">
+
+                            <Image Source="{Binding Content}" Name="image" Grid.Row="1" Grid.Column="1"
+                       cal:Message.Attach="[Event MouseUp] = [Action MouseUpCommand2($scaledmousex, $scaledmousey, $eventArgs)]"
+                       RenderTransformOrigin="0.5,0.5" 
+                       />
+                        </Border>
+
+                    </Border>
+            </Grid>
                    <!--MouseWheel="Image_MouseWheel"-->
                    <!--; [Event MouseWheel] = [Action MouseWheelCommand($source, @eventArgs)]"-->
                    <!--cal:Message.Attach="[Event MouseUp] = [Action MouseUpCommand($this, $eventArgs)]"-->
         </pz:ZoomBorder>
+        </Grid>
     </Grid>
 </UserControl>
